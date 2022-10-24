@@ -1,3 +1,7 @@
+/*
+Lectura y entrada de números
+*/
+
 #include<iostream>
 
 using namespace std;
