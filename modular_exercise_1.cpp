@@ -1,15 +1,15 @@
 // building vectors
 
 #include <iostream>
-#include <vector>
+#include <vector> //esta libreria no es necesaria para este codigo, indpendientemente de que usamos el operador "[]"
 
 using namespace std;
 
-int promedio_vec(unsigned char *myvec, unsigned char col);
+int promedio_vec(unsigned char* myvec, unsigned char col);
 
 int main(){
     unsigned char col = 7; // size
-    unsigned char myvec[col] = {10, 1, 1, 1, 1, 1, 10};
+    unsigned char myvec[col] = {20, 1, 1, 1, 1, 1, 10};
     float mysum = 0;
     for (int j = 0; j < col; j++){
         mysum += myvec[j];
@@ -18,7 +18,7 @@ int main(){
     promedio_vec(myvec, col);
 }
 
-int promedio_vec(unsigned char *myvec, unsigned char col){
+int promedio_vec(unsigned char* myvec, unsigned char col){
     float promedio = 0;
     float mysum = 0;
     for (int j = 0; j < col; j++){
