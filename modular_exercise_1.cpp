@@ -14,7 +14,6 @@ int main(){
     for (int j = 0; j<col; j++){
         mysum += myvec[j];
     }
-    cout << mysum << endl;
     promedio_vec(myvec, col);
 }
 
@@ -26,10 +25,12 @@ int promedio_vec(unsigned char* myvec, unsigned char col){
         mysum += myvec[j];
     }
     for (int j = 0; j<col; j++){
-        nvec[j] = myvec[j];
+        nvec[j] += myvec[j];
     }
-    cout << nvec << endl;
-    cout << &myvec[2] << endl;
+    for (int j = 0; j<col; j++){
+        cout << nvec[j] << " ";
+    }
+    cout << endl;
     promedio = mysum / col;
     cout << "suma: " << mysum << endl;
     cout << "promedio: " << promedio << endl;
