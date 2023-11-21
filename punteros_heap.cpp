@@ -1,25 +1,39 @@
 #include <iostream>
 #include <string>
 
+typedef int valor;
+
+
 using namespace std;
 
 int main(){
-    // int *n = new int; // este apuntador esta accediento a una variable entera en el HEAP
-    // *n = 18;
-    // cout << sizeof(*n) << endl;
-    // cout << sizeof(n) << endl;
+    
+    // srand(time(NULL));
+    // short aleat = 1 + rand()%5;
 
-    // char *c = new char; // espacio apuntado
-    // *c = 'x';  // letra que se guardara en el espacio apuntado -- "char" ocupa un  byte
-    // cout << sizeof(*c) << endl;
-    // cout << sizeof(c) << endl;
+    uint16_t x;
+    x = 400;
+
+    uint16_t *ptr;
+    ptr = &x;
+
+    std::cout << "el valor que almaneca ptr es:" << *ptr << std::endl;
+    std::cout << "el valor que almaneca ptr es:" << ptr << std::endl;
+    std::cout << "el valor que almaneca ptr es:" << &ptr << std::endl;
+    std::cout << "el valor que almaneca ptr es:" << &x << std::endl;          
+
+    valor i2, i3, i4;
+    char *c = new char; // espacio apuntado
+
+    *c = 'M';  // letra que se guardara en el espacio apuntado -- "char" ocupa un  byte
+
 
     // /*todos los punteros ocupan 8 bytes independientmente del tamaño de la variable en el STACK*/
     // cout << c << endl;
-    int i = 5;
+    // int i = 5;
     // cout << sizeof(i) << endl;
 
-    int *p = &i;
+    // int *p = &i;
 
 
 }

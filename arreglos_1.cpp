@@ -11,7 +11,6 @@ int main(){
     }
     cout << "Los numeros ingresados son: \n";
     for (int i = 0; i < n; i ++){
-        cout << numbers[i] << endl;
+        cout << numbers[i];
     }
-
 }

@@ -36,7 +36,7 @@ int main(){
 
     std::cout << std::endl;
 
-    // el siguien for solo es para mostrar donde están las minas, se le hara una función más adelante de mostrar solución.
+    // el siguien for solo es para mostrar donde están las minas, se hara una función más adelante para mostrar una solución.
     // for (int i = 1; i<row+1; i++){
     //     for (int j = 1; j < col+1; j++){
     //         cout << space2[i][j];
