@@ -23,6 +23,5 @@ int main(void){
 
     std::cout<<"El promedio es: "<< total << std::endl;
 
-
     return 0;
 }
