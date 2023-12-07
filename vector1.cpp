@@ -19,7 +19,9 @@ int main(){
 
     std::cout << v1.back()  << std::endl;
     std::cout << v1.front()  << std::endl;
-
+    std::cout << v1.size()  << std::endl;
+    std::cout << v1.capacity()  << std::endl;
+    v1.push_back(9);
 
     for(int x = 0; x<10; x++){
         std::cout << x << '\t'<<&A[x] <<'\t'<< &B[x] <<'\t'<< &C[x] << std::endl;
