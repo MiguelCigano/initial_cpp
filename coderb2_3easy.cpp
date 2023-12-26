@@ -52,6 +52,10 @@ int EnemigoCercano(uint16_t arr[], uint16_t longuitud){
     return 0;
 }
 
+int dibujarEscenario(){
+    return 0;
+}
+
 int main(){
 
     uint16_t arr[11] = {0, 2, 0, 2, 1, 0, 0, 0, 0, 2, 0};
