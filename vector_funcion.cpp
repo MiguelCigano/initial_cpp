@@ -1,4 +1,4 @@
-/* Desmotración de paso de un arreglo a una función */
+/* Desmotración de paso de un arreglo a una función con notación de paso por valor y usando punteros */
 
 #include <iostream>
 
@@ -10,6 +10,7 @@ int contador;
 // definición de prototipo de función
 int longuitud(int x[], int y);
 int mas_grande(int x[], int y);
+int mas_grande_puntero(int *x, int y);
 
 int main(){
     std::cout << "Hola 0x001 \n" << std::endl;
@@ -26,7 +27,7 @@ int main(){
     std::cout << "Longuitud de arreglo: " <<largo << std::endl;
     //std::cout << arreglo << std::endl;
     //std::cout << &arreglo[0] << std::endl;
-    int grande = mas_grande(arreglo, MAX);
+    int grande = mas_grande_puntero(arreglo, MAX);
     std::cout << "Elemento más grande de arreglo: " << grande << "\n" << std::endl;  
     return 0;
 }
@@ -48,7 +49,7 @@ int longuitud(int x[], int y){
 // "x" en este caso hace la función de un identificador para el ambito de la 
 // función
 
-int mas_grande(int *x, int y){
+int mas_grande(int x[], int y){
     int grande = -12000;
 
     for(int i = 0; i < y; i++){
@@ -59,4 +60,16 @@ int mas_grande(int *x, int y){
     return grande;
 }
 
-// a continuación se 
+// a continuación se muestra una función similar a mas_grande pero usando notación de punteros
+
+int mas_grande_puntero(int *x, int y){
+    
+    int grande = -12000;
+    
+    for(int i = 0; i < y; i ++){
+        if(*(x+i) > grande){
+            grande = *(x+i);
+        }
+    }
+    return grande;
+}
