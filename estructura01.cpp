@@ -1,4 +1,4 @@
-// Punteros a estructuras 1
+// Punteros a estructuras 01
 #include <iostream>
 
 struct PERSONA{

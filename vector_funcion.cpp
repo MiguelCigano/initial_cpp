@@ -1,5 +1,7 @@
 /* Desmotración de paso de un arreglo a una función con notación de paso por valor y usando punteros */
 
+
+
 #include <iostream>
 
 #define MAX 3
