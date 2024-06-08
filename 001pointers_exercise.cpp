@@ -8,8 +8,12 @@ Las siguuientes funciones son algunas de las más comunes de los algoritmos  que
 // 1. Realiza una función que calcule el promedio de los valores de un array
 
 #include <iostream>
+<<<<<<< HEAD
 //#include <iomanip>
 #include <cstdio>
+=======
+#include <iomanip> 
+>>>>>>> b0e1a4e (Cambios agregados)
 
 unsigned char avrg(unsigned char *arr, unsigned char *size_);
 
@@ -19,9 +23,13 @@ int main(){
     unsigned char prm = avrg(arr, &size_);
     //avrg(arr, &size_);
     //std::cout<<"El promedio es: "<<prm<<std::endl;
+<<<<<<< HEAD
     // std::cout << "Número char: " << std::fixed << std::setprecision(2) << static_cast<float>(prm) << std::endl;
     double valor = static_cast<double>(prm);
     std::cout<< "valor es: " << valor<<std::endl;
+=======
+    std::cout << "Número char: " << std::fixed << std::setprecision(2) << static_cast<float>(prm) << std::endl;
+>>>>>>> b0e1a4e (Cambios agregados)
 }
 
 unsigned char avrg(unsigned char *arr, unsigned char *size_ptr){
@@ -41,10 +49,18 @@ unsigned char avrg(unsigned char *arr, unsigned char *size_ptr){
         suma = suma + arr_int[i];
     }
     std::cout<<std::endl;
+<<<<<<< HEAD
 
     //unsigned char prm;
     
     std::cout<<suma/sz_int<<std::endl;
 
     return suma/sz_int;
+=======
+    float prm = suma/sz_int;
+    float promedio = static_cast<float>(prm);
+    std::cout<<promedio<<std::endl;
+
+    return promedio;
+>>>>>>> b0e1a4e (Cambios agregados)
 }

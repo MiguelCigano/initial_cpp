@@ -56,7 +56,7 @@ int EnemigoCercano(int arr[], int longuitud){
 
 int main(){
 
-    int arr[6] = {2, 0, 1, 0, 0, 0}; // se puede cambiar este agreglo!
+    int arr[6] = {0, 1, 0, 2, 0, 0}; // se puede cambiar este agreglo!
     int longuitud = sizeof(arr) / sizeof(*arr);
     int s = EnemigoCercano(arr, longuitud);
     std::cout << "Enemigo más cercano a " << s << " posiciones"<< std::endl;
