@@ -1,6 +1,10 @@
+#include <iostream>
+
+using namespace std;
+
 class nComplejo{
     private:
-        // Atributos de clase.
+        // Atributos de clase (forman parte de la implementación).
         double real;
         double img;
 
@@ -33,4 +37,12 @@ class nComplejo{
 
 
 
+void nComplejo::asignaReal(double r)
+{
+    real = r;
+}
 
+double nComplejo::asignaImg()
+{
+    return img;
+}

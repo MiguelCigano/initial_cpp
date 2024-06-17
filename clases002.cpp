@@ -1,6 +1,6 @@
 #include <iostream>
 
-class CAT
+class Cat
 {
     public:
         int age;
@@ -8,11 +8,20 @@ class CAT
 
 };
 
+struct YukoStr
+{
+    int age2;
+    int weight2;
+};
+
 int main(){
-    CAT Pedrito;
-    Pedrito.age = 5;           // -------- Asignacion a una variable miembro
-    std::cout << "Pedrito es un gato el cual tiene ";
-    std::cout << Pedrito.age << " años de edad";
+    Cat Yuko;
+    YukoStr YukoStr;
+    Yuko.age = 5;           // -------- Asignacion a una variable miembro
+    (*YukoStr).weight2 = 25;
+    std::cout << "Yuko es un gato el cual tiene ";
+    std::cout << Yuko.age << " años de edad";
+    // std::cout << (*Yuko) << std::endl;
     return 0;
 }
 
