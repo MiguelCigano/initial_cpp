@@ -27,6 +27,8 @@ struct fecha {
 // Ejemplo 3
 // Declara una ESTRUCTURA llamada tiempo con una INSTANCIA llamada tiempo inicializada
 
+una de las cosas mas interesantes que podemos hacer  ahora tenemso una de las coasa  que 
+
 struct tiempo {
     int horas;
     int minutos;

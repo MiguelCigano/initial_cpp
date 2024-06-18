@@ -26,12 +26,12 @@ class nComplejo{
 // Solo se puede acceder a ellos en la implementación de los métodos de la clase.
 
 
-/************************************************************************************************************************/
+/**************************************************************************************************************/
 
 // Los métodos que están en la parte pública (interfaz) describen el comportamiento de la clase.
 // Lo anterior se refiere a las operaciones que podemos aplicar a algún objeto de la clase nComplejo.
 
-/************************************************************************************************************************/
+/**************************************************************************************************************/
 
 // La implementación de los métodos de una clase se realiza fuera de la construcción de la clase:
 
@@ -42,7 +42,15 @@ void nComplejo::asignaReal(double r)
     real = r;
 }
 
-double nComplejo::asignaImg()
+double nComplejo::parteImg()
 {
     return img;
+}
+
+// Por otro lado un método puede recibir argumentos explicitos de la clase a la que pertenece. Por ejemplo el método suma recibe dos argumentos explicitos de tipo nComplejo.
+
+void nComplejo::suma(const nComplejo &a, const nComplejo &b)
+{
+    real = a.real + b.real; 
+    img = a.img + b.img;
 }
