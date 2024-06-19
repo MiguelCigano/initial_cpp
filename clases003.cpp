@@ -16,9 +16,11 @@ class Punto
         int getY() const;
 
     private:
-    int itsX;
-    int itsY;
+        int itsX;
+        int itsY;
 };
+
+// Las siguiente dos funciones son ejemplos de declaraciones fuera de línea
 
 void Punto::setY(int y)
 {
@@ -33,10 +35,10 @@ int Punto::getY() const
 class Rtan
 {
     public:
-        Rtan(int top, int left, int bottom, int right); 
+        Rtan(int top, int left, int bottom, int right); // constructor
         ~Rtan() {} // Destructor
         
-        // Las siguientes declaraciones (implementaciones) son en línea
+        // Las siguientes declaraciones (implementaciones) son todas en línea
         int getTop() const { return itsTop; }
         int getLeft() const { return itsLeft; }
         int getBottom() const { return itsBottom; }
@@ -107,10 +109,10 @@ int main()
 
     int area = miRectangulo.getArea();
 
-    std::cout << area << std::endl;
+    std::cout << "Area: " << area << std::endl;
+    std::cout << "Upper left X coordinate: ";
+    std::cout << miRectangulo.getUpperLeft().getX() << std::endl;
 
     return 0;
+
 }
-
-
-
