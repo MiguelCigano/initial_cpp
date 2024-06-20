@@ -32,6 +32,8 @@ int Punto::getY() const
     return itsY;
 }
 
+
+// Se crea la clase rectan --------------------
 class Rtan
 {
     public:
