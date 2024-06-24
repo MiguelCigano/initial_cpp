@@ -81,6 +81,7 @@ int main(void)
         
         switch (seleccion)
         {
+
         case dibujarTriang:
             hacerDibujoTriang(miTriangulo);
             break;
@@ -142,32 +143,10 @@ void hacerDibujoTriang(Triang miTrian)
     {
         for(int i = 0; i < altura; i++)
         {   
-            for(int j = 0 ; j < base ; j++)
+            for(int j = 0 ; j < i ; j++)
             {
-                if(i==0)
-                {   
-                    std::cout << "*";
-                }
-
-                if(i>0)
-                {
-                    if((j > iniAux) || (j < finAux))
-                    {
-                        std::cout << " ";
-                    }
-                    
-                    if((j > iniAux) || (j < finAux))
-                    {
-                        std::cout << " ";
-                    }
-
-                    iniAux = iniAux + 1;
-                    finAux = finAux - 1;
-                    
-                }
+                std::cout << "*";
             }
-            
-
             std::cout << std::endl;
         }
     }
