@@ -1,8 +1,8 @@
 #include <iostream>
 using namespace std;
-//programa pasa el vector como valor
+/* programa pasa el vector como valor */
 
-//esta función pasa los valores de un vector como valor a una función en la que se vacian a otro vector
+/* esta función pasa los valores de un vector como valor a una función en la que se vacian a otro vector */
 int pasar_vec(int myvec_valor[], int myvec_valor_2[], int tam);
 double promedio_vec(int myvec_valor[], int myvec_valor2[], int tam);
 

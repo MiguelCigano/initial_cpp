@@ -4,6 +4,7 @@
 
  using namespace std;
 
+/*Esta estructura se hace porque estabamos haciendo un poco de casteo*/
 struct MyStruct 
 {
     int x;
