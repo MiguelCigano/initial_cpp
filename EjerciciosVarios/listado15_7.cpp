@@ -38,7 +38,8 @@ int getLines(char *lines[])
     int n = 0;
     char buffer[80]; /* almacenamiento temporal para cada línea */
     puts("Enter one line at time; enter a blank when done. ");
-    while( (n < MAXLINES) && (std::cin.getline(buffer, sizeof(buffer)) ) && (buffer[0] != '\0') )
+
+    while( (n < MAXLINES) && (std::cin.getline(buffer, sizeof(buffer))) && (buffer[0] != '\0') )
     {
         if ( (lines[n] = (char*)malloc(strlen(buffer) + 1)) == NULL )
         {

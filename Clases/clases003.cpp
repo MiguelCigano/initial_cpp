@@ -114,6 +114,7 @@ int main()
     std::cout << "Area: " << area << std::endl;
     std::cout << "Upper left X coordinate: ";
     std::cout << miRectangulo.getUpperLeft().getX() << std::endl;
+    std::cout << std::endl;
 
     return 0;
 
