@@ -34,7 +34,7 @@ void *work()
     residuo = i % 10;
     if( residuo > 5 )
     {
-        ch = 'y';
+        ch = '0';
     }
     for( i = 0; i < 50 ; i++ )
     {
