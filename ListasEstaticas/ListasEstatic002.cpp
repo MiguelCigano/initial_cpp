@@ -44,31 +44,30 @@ struct pacientes {
     int total;
     struct fecha atencion;
     struct servicio svc;
-}lst[numeroPacientes];
+};
 
-void iniciarPacientes()
+void iniciarPacientes(struct pacientes *lst[])
 {
     for (int i = 0; i < numeroPacientes; i++){
+
+        lst[i] = (struct paciente *)malloc(sizeof(paciente lst));
         
+        if (lst[i] != )
+
         lst[i].nombre = " ";
         lst[i].edad = 0;
         lst[i].sexo = " ";
         lst[i].total = 0;
-
         lst[i].atencion.anio = 0;
         lst[i].atencion.mes = 0;
         lst[i].atencion.dia = 0;
         lst[i].atencion.hora = 0;
         lst[i].atencion.min = 0;
 
-        lst[i].svc.blanqueamiento = false;
-        lst[i].svc.extraccion = false;
-        lst[i].svc.limpieza = 0;
-        lst[i].svc.tapadura = 0;
     }
 }
 
-void mostrarPacientes()
+void mostrarPacientes(pacientes *lst)
 {
     for (int i = 0; i < numeroPacientes; i++){
 
@@ -88,33 +87,12 @@ void mostrarPacientes()
     
 }
 
-int comprobarAgenda()
-{   
-    int i = 0;
-    while (i<numeroPacientes){
-        
-        if (lst[i].nombre == " "){
-            std::cout << "Espacio disponible: " << i << std::endl;
-
-            return i+1;
-        }
-        else
-            std::cout << "No hay espacio disponibles hoy" << std::endl;
-
-        i++;        
-    }
-    
-    return -1;
-}
-
-
-
 int main(int argc, char **argv)
 {
-    iniciarPacientes();
-    mostrarPacientes();
-
-    return 0;
+    pacientes *lst[numeroPacientes];
+    
+    iniciarPacientes(lst[0]);
+    mostrarPacientes(lst[0]);
 }
 
 
