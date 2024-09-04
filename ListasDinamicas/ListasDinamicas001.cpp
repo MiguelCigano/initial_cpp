@@ -150,6 +150,23 @@ Tarea *buscarTareaPorNombre(Lista *lst)
     return 0; // cambiar por NULL
 }
 
+void eliminarTarea(Lista *&lst)
+{
+    if (lst == NULL)
+    {
+        std::cout << "Lista vacia " << std::endl;
+    }
+    else
+    {
+        std::cout << "Ingrese tarea completada" << std::endl;
+        Tarea *aux = buscarTareaPorNombre(lst);
+        if (aux != NULL)
+        {
+            aux->estado = false;
+        }
+    }
+}
+
 int main(int argc, char **argv)
 {   
     Lista *lst = NULL;
