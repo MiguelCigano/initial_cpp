@@ -21,12 +21,10 @@ class mascotaGato
 int main(int argc, char **argv)
 {
     mascotaGato *cucho = new mascotaGato;
-
-    std::cout << "Cucho tiene " << cucho->obteniendoEdad() << " años de edad." << std::endl;
-    
-    std::cout << "Cambiando la edad de Cucho..." << std::endl;
+    cout << "Cucho tiene " << cucho->obteniendoEdad() << " años de edad." << endl;
+    cout << "Cambiando la edad de Cucho..." << std::endl;
     cucho->configurandoEdad(13);
-    std::cout << "Ahora Cucho tiene " << cucho->obteniendoEdad() << " años de edad." << std::endl;
+    cout << "Ahora Cucho tiene " << cucho->obteniendoEdad() << " años de edad." << endl;
 
     delete cucho;
 
