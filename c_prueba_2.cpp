@@ -2,17 +2,20 @@
 #include <algorithm>
 #include <vector>
 
+/* Revisar este código, se ve interesante, es sobre cosas que comprar con presupuestos*/
+
 using namespace std;
 
 int N, B, A[100000];
 
-
 void solve() {
 	cin >> N >> B;
-	for(int i=0; i<=N; ++i)
+	for(int i=0; i<=N; ++i){
 		cin >> A[i];
+	}
 	sort(A, A+N);
 	int ans = 0;
+
 	for(int i=0; i<=N; ++i){
 		if(B>=A[i]){
 		B-=A[i];
@@ -35,10 +38,7 @@ int main(){
 		cout<<"Case #"<<i<< ": ";
 		solve();
 		++i;
-	}
-	
-	
-	
+	}	
 }
 
 

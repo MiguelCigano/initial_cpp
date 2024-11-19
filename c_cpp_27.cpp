@@ -7,22 +7,22 @@ using namespace std;
 
 int main()
 {
-    int arreglo[5], guardar;
-    for (int i = 0; i < 5; i++){
+    int arreglo[5];
+    int guardar;
+    for (int i = 0; i <= 4; i++){
         cout << "Ingrese un número: " ;
         cin >> arreglo[i];
     }
 
-
-    for (int i = 0; i < 4; i++){
-        for (int j = 0; i < 4; j++) {
-            if (arreglo[j] > arreglo[j + 1]) {
-                guardar = arreglo[j];
-                arreglo[j] = arreglo[j + 1];
-                arreglo[j + 1] = guardar;
-            }
-        }  
-    }
+    // for (int i = 0; i < 4; i++){
+    //     for (int j = 0; i < 4; j++) {
+    //         if (arreglo[j] > arreglo[j + 1]) {
+    //             guardar = arreglo[j];
+    //             arreglo[j] = arreglo[j + 1];
+    //             arreglo[j + 1] = guardar;
+    //         }
+    //     }  
+    // }
 
     for (int i = 0; i < 5; i++){
         cout << arreglo[i]<<endl;

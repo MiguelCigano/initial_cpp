@@ -3,7 +3,6 @@
 #include <limits> 
 
 using namespace std;
-
 /* ----------------------------------------------------- */
 /* Clinica dental */
 /* Crear una lista para agregar pacientes */
@@ -18,21 +17,20 @@ using namespace std;
 /* ----------------------------------------------------- */
 
 /* definimos los precios como variables globales */
-#define precioLimpieza 1300
-#define precioTapadura 1500
-#define precioExtraccion 3000
-#define precioBlanqueamiento 4000
-#define numeroPacientes 20
+#define precioLimpieza          1300
+#define precioTapadura          1500
+#define precioExtraccion        3000
+#define precioBlanqueamiento    4000
+#define numeroPacientes           20
 
 /* Prototipos de funciones */
-void iniciarPacientes();
-void mostrarPacientes();
-int comprobarAgenda();
-void mostrarHoraDisponible(int hora, int min, int indice);
-void agregarElemento();
-void ingresarPaciente(int it);
-void selectServicio();
-
+void iniciar_pacientes();
+void mostrar_pacientes();
+int  comprobar_agenda();
+void mostrar_hora_disponible(int hora, int min, int indice);
+void agregar_elemento();
+void ingresar_paciente(int it);
+void select_servicio();
  
 struct fecha { 
     int anio;
@@ -59,32 +57,31 @@ struct pacientes {
     struct servicio svc;
 }lst[numeroPacientes];
 
-
-void iniciarPacientes()
+void iniciar_pacientes()
 {
     for (int i = 0; i < numeroPacientes; i++){
         
-        lst[i].nombre = " ";
-        lst[i].edad = 0;
-        lst[i].sexo = " ";
-        lst[i].total = 0;
+        lst[i].nombre   = " ";
+        lst[i].edad     = 0;
+        lst[i].sexo     = " ";
+        lst[i].total    = 0;
 
-        lst[i].atencion.anio = 0;
-        lst[i].atencion.mes = 0;
-        lst[i].atencion.dia = 0;
+        lst[i].atencion.anio    = 0;
+        lst[i].atencion.mes     = 0;
+        lst[i].atencion.dia     = 0;
 
         static int horaInicial = 7;
         /* contador se usa para evitar más if, y diferenciar la hora de comida */
         static int contador = 0;
 
-        if (i%2 == 0 && contador != 10){
+        if (i%2 == 0 && contador != 10) {
             lst[i].atencion.hora = ++horaInicial;
             lst[i].atencion.min = 0;
         }
         else if (contador == 10) {
             lst[i].atencion.hora = horaInicial += 2;
         }
-        else{
+        else {
             lst[i].atencion.hora = horaInicial;
             lst[i].atencion.min = 3;
         }
@@ -98,22 +95,21 @@ void iniciarPacientes()
     }
 }
 
-void mostrarPacientes()
+void mostrar_pacientes()
 {
-    for (int i = 0; i < numeroPacientes; i++){
-
+    for (int i = 0; i < numeroPacientes; i++) {
         std::cout << "+-----------------------------------+" << std::endl;
-        std::cout << "Nombre: " << lst[i].nombre << std::endl;
-        std::cout << "Edad: " << lst[i].edad << std::endl;
-        std::cout << "Sexo: " << lst[i].sexo << std::endl;
-        std::cout << "Total: " << lst[i].total << std::endl;
+        std::cout << "Nombre: "         << lst[i].nombre << std::endl;
+        std::cout << "Edad: "           << lst[i].edad << std::endl;
+        std::cout << "Sexo: "           << lst[i].sexo << std::endl;
+        std::cout << "Total: "          << lst[i].total << std::endl;
         std::cout << std::endl;
-        std::cout << "Limpieza: " << lst[i].svc.limpieza << std::endl;
+        std::cout << "Limpieza: "       << lst[i].svc.limpieza << std::endl;
         std::cout << "Blanqueamiento: " << lst[i].svc.blanqueamiento << std::endl;
-        std::cout << "Tapadura: " << lst[i].svc.tapadura << std::endl;
-        std::cout << "Extracción: " << lst[i].svc.extraccion << std::endl;
+        std::cout << "Tapadura: "       << lst[i].svc.tapadura << std::endl;
+        std::cout << "Extracción: "     << lst[i].svc.extraccion << std::endl;
         std::cout << std::endl;
-        std::cout << "Fecha de atención programada: " << lst[i].atencion.anio << "/"  << lst[i].atencion.mes << "/" << lst[i].atencion.dia << "   Hora de atención programada: " << lst[i].atencion.hora << ":" << lst[i].atencion.min << "0" << std::endl;
+        std::cout << "Fecha de atención programada: " << lst[i].atencion.anio << "/"  << lst[i].atencion.mes << "/" << lst[i].atencion.dia << ". Hora de atención programada: " << lst[i].atencion.hora << ":" << lst[i].atencion.min << "0" << std::endl;
 
         if (i == 9){
             std::cout << std::endl;
@@ -129,33 +125,29 @@ void mostrarPacientes()
             std::cout << "||||||||||||||||||||||||||||||||||||||||" << std::endl;
             std::cout << std::endl;
         }
-
     }
-    
 }
 
-int comprobarAgenda()
+int comprobar_agenda()
 {   
     int i = 0;
-    while (i < numeroPacientes){
-        
-        if (lst[i].nombre == " "){
+    while (i < numeroPacientes) {
+        if (lst[i].nombre == " ") {
             // std::cout << "Espacio disponible: " << i+1 << std::endl;
             return i+1; // retorna indice disponible
         }
-        else{
+        else {
             std::cout << "No hay espacio disponibles hoy" << std::endl;
-            return -1;
+            return -1; // este valor de retorno indica que la egenda ya esta completa
         }
 
         i++;    
     }
 
     return -1;
-     
 }
 
-void ingresarPaciente(int it)
+void ingresar_paciente(int it)
 {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 
@@ -172,22 +164,23 @@ void ingresarPaciente(int it)
     
 }
 
-void selectServicio(int it)
+void select_servicio(int it)
 {
     int respuesta = 0;
     while(respuesta!=5){
 
-        std::cout << "1) Limpieza dental, SI: 1 / NO: 0." << std::endl;
-        std::cout << "2) Tapadura de caries." << std::endl;
-        std::cout << "3) Extracción de muelas." << std::endl;
+        std::cout << "1) Limpieza dental, SI: 1 / NO: 0."   << std::endl;
+        std::cout << "2) Tapadura de caries."               << std::endl;
+        std::cout << "3) Extracción de muelas."             << std::endl;
         std::cout << "4) Blanqueamiento dental. SI: 1 / NO: 0." << std::endl;
-        std::cout << "5) Ninguno otro servicio." << std::endl;
+        std::cout << "5) Ninguno otro servicio."            << std::endl;
 
         std::cin >> respuesta;
 
         switch (respuesta)
         {
-            case 1: std::cin >> lst[it].svc.limpieza; break;
+            case 1: std::cin >> lst[it].svc.limpieza;   
+                break;
             case 2:
                 std::cout << "¿Cuantas tapaduras?: ";
                 std::cin >> lst[it].svc.tapadura;
@@ -196,62 +189,57 @@ void selectServicio(int it)
                 std::cout << "¿Cuantas extraciones?: ";
                 std::cin >> lst[it].svc.extraccion;
                 break;
-            case 4: std::cin >> lst[it].svc.blanqueamiento; break;
+            case 4: std::cin >> lst[it].svc.blanqueamiento; 
+                break;
             default:
                 std::cout << "Servicio no valido" << std::endl;
         }
-
     }
 }
 
-void mostrarHoraDisponible(int hora, int min, int indice)
+// validar hora
+void mostrar_hora_disponible(int hora, int min, int indice)
 {
     int it = 0;
 
-    for (int i = 0; i < numeroPacientes; i++){
-        
-        if ((hora == lst[i].atencion.hora) && (min == lst[i].atencion.min)){
-            if (lst[i].nombre == " "){
-
+    for (int i = 0; i < numeroPacientes; i++) {
+        if ((hora == lst[i].atencion.hora) && (min == lst[i].atencion.min)) {
+            if (lst[i].nombre == " ") {
                 it = i;
-
                 std::cout << std::endl;
                 std::cout << "Hora selecionado disponible" << std::endl;
                 std::cout << std::endl;
                 
-                ingresarPaciente(it);
+                ingresar_paciente(it);
 
                 std::cout << "Ingrese tipo de servicio" << std::endl;
-
-                selectServicio(it);
+                select_servicio(it);
             }
-
         else
             std::cout << "Horario sugerido: " << lst[indice].atencion.hora << ":" << lst[indice].atencion.min << "0" << std::endl;
         }
     }
-
 }
 
-void agregarElemento()
+void agregar_elemento()
 {
+    int hora, min;
+    int indice = comprobar_agenda();
 
-    int hora;
-    int min;
-
-    int indice = comprobarAgenda();
-
-    if (indice != -1){
+    if (indice != -1) {
         std::cout << "Ingrese hora: "<< std::endl;
         std::cin >> hora;
         std::cout << "Ingrese minutos: " << std::endl;
         std::cin >> min;
         min = min/10;
     }
-    else
-        comprobarAgenda();
-
-    mostrarHoraDisponible(hora, min, indice);
+    else{
+        int resp = comprobar_agenda(); // valida la agenda
+        if (resp == -1) {
+            mostrar_hora_disponible(hora, min, indice); //validar hora (sugiere hora)            
+        }
+    }
+    mostrar_hora_disponible(hora, min, indice); //validar hora 
 
     // lst[0]  ----> 8:00  --  8:25
     // lst[1]  ----> 8:30  --  8:55
@@ -277,10 +265,10 @@ void agregarElemento()
 
 int main(int argc, char **argv)
 {
-    iniciarPacientes();
-    mostrarPacientes();
-    agregarElemento();
-    mostrarPacientes();
+    iniciar_pacientes();
+    mostrar_pacientes();
+    agregar_elemento();
+    mostrar_pacientes();
 
     return 0;
 }
