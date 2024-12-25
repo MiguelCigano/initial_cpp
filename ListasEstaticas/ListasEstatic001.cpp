@@ -3,25 +3,26 @@
 #include <limits> 
 
 using namespace std;
-/* ----------------------------------------------------- */
-/* Clinica dental */
-/* Crear una lista para agregar pacientes */
-/* La clina atiende a 20 personas por día entre 10 y 30 min por persona */
-/* La agenda considera los siguientes datos: nombre, edad, sexo, fecha y hora de la consulta, total a pagar, y servicios realizados */
+/* -----------------------------------------------------
+ * Clinica dental
+ * Crear una lista para agregar pacientes
+ * La clina atiende a 20 personas por día entre 10 y 30 min por persona
+ * La agenda considera los siguientes datos: nombre, edad, sexo, fecha y hora de la consulta, total a pagar, y servicios realizados
 
-/* Se consideran los siguientes tratamientos */
-/* 1) Limpieza dental: $1,300 */
-/* 2) Tapadura de caries: $1,500 */
-/* 3) Extracción de muelas: $3,000 */
-/* 4) Blanqueamiento dental: $4,000 */
-/* ----------------------------------------------------- */
+ * Se consideran los siguientes tratamientos
+ * 1) Limpieza dental: $1,300
+ * 2) Tapadura de caries: $1,500
+ * 3) Extracción de muelas: $3,000
+ * 4) Blanqueamiento dental: $4,000
+ * ----------------------------------------------------- 
+ */
 
 /* definimos los precios como variables globales */
-#define precioLimpieza          1300
-#define precioTapadura          1500
-#define precioExtraccion        3000
-#define precioBlanqueamiento    4000
-#define numeroPacientes           20
+const int precioLimpieza       = 1300;
+const int precioTapadura       = 1500;
+const int precioExtraccion     = 3000;
+const int precioBlanqueamiento = 4000;
+const int numeroPacientes      =   20;
 
 /* Prototipos de funciones */
 void iniciar_pacientes();
@@ -31,6 +32,7 @@ void mostrar_hora_disponible(int hora, int min, int indice);
 void agregar_elemento();
 void ingresar_paciente(int it);
 void select_servicio();
+void pago_total(int indice);
  
 struct fecha { 
     int anio;
@@ -50,9 +52,9 @@ struct servicio {
 /* se crea una lista de 20 estructuras tipo pacientes de forma global */
 struct pacientes {
     string nombre;
-    int edad;
+    double edad;
     std::string sexo;
-    int total;
+    double total;
     struct fecha atencion;
     struct servicio svc;
 }lst[numeroPacientes];
@@ -140,10 +142,8 @@ int comprobar_agenda()
             std::cout << "No hay espacio disponibles hoy" << std::endl;
             return -1; // este valor de retorno indica que la egenda ya esta completa
         }
-
         i++;    
     }
-
     return -1;
 }
 
@@ -195,6 +195,7 @@ void select_servicio(int it)
                 std::cout << "Servicio no valido" << std::endl;
         }
     }
+    pago_total(it);
 }
 
 // validar hora
@@ -219,6 +220,22 @@ void mostrar_hora_disponible(int hora, int min, int indice)
             std::cout << "Horario sugerido: " << lst[indice].atencion.hora << ":" << lst[indice].atencion.min << "0" << std::endl;
         }
     }
+}
+
+void pago_total(int indice)
+{
+    double blanqueamiento = 0;
+    double limpieza       = 0;
+    double tapaduras      = (lst[indice].svc.extraccion)*(precioExtraccion);
+    double extraccion     = (lst[indice].svc.tapadura)*(precioTapadura);
+    if (lst[indice].svc.blanqueamiento == true) {
+        blanqueamiento = precioBlanqueamiento;
+    }
+    if (lst[indice].svc.blanqueamiento == true) {
+        limpieza = precioLimpieza;
+    }
+
+    lst[indice].total = blanqueamiento + limpieza + tapaduras + extraccion;
 }
 
 void agregar_elemento()
@@ -269,7 +286,6 @@ int main(int argc, char **argv)
     mostrar_pacientes();
     agregar_elemento();
     mostrar_pacientes();
-
     return 0;
 }
 
