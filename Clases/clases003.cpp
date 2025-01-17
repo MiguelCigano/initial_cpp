@@ -1,7 +1,6 @@
 #include <iostream>
 
 // Clases oon otras clases como miembros
-
 using namespace std;
 
 // La clase punto es la encargada de sostener los puntos "x" y "y"
@@ -41,20 +40,20 @@ class Rtan
         ~Rtan() {} // Destructor
         
         // Las siguientes declaraciones (implementaciones) son todas en línea
-        int getTop() const { return itsTop; }
-        int getLeft() const { return itsLeft; }
-        int getBottom() const { return itsBottom; }
-        int getRight() const { return itsRight; }
+        int getTop()    const { return itsTop;      }
+        int getLeft()   const { return itsLeft;     }
+        int getBottom() const { return itsBottom;   }
+        int getRight()  const { return itsRight;    }
 
-        Punto getUpperLeft() const { return itsUpperLeft; }
-        Punto getULowerLeft() const { return itsLowerLeft; }
-        Punto getUpperRight() const { return itsUpperRight; }
-        Punto getLowerRight() const { return itsLowerRight; }
+        Punto getUpperLeft()    const { return itsUpperLeft;    }
+        Punto getULowerLeft()   const { return itsLowerLeft;    }
+        Punto getUpperRight()   const { return itsUpperRight;   }
+        Punto getLowerRight()   const { return itsLowerRight;   }
 
-        void setUpperLeft(Punto Location) {itsUpperLeft = Location; }
-        void setLowerLeft(Punto Location) { itsLowerLeft = Location; }
-        void setUpperRight(Punto Location) {itsUpperRight = Location; }
-        void setLowerRight(Punto Location) { itsLowerRight = Location; }
+        void setUpperLeft(Punto Location)   { itsUpperLeft = Location;   }
+        void setLowerLeft(Punto Location)   { itsLowerLeft = Location;   }
+        void setUpperRight(Punto Location)  { itsUpperRight = Location;  }
+        void setLowerRight(Punto Location)  { itsLowerRight = Location;  }
 
         int getArea() const;
 
@@ -74,10 +73,10 @@ class Rtan
 
 Rtan::Rtan(int top, int left, int bottom, int right)
 {
-    itsTop = top;
-    itsLeft = left;
-    itsBottom = bottom;
-    itsRight = right;
+    itsTop      = top;
+    itsLeft     = left;
+    itsBottom   = bottom;
+    itsRight    = right;
 
     itsUpperLeft.setX(left);
     itsUpperLeft.setY(top);

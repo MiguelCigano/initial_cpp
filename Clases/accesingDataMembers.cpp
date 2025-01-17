@@ -8,7 +8,7 @@ using namespace std;
 class mascotaGato
 {
     public:
-        mascotaGato() { suEdad = 10; } // en línea
+        mascotaGato()  { suEdad = 10; } // en línea
         ~mascotaGato() {}
 
         int obteniendoEdad() const { return suEdad; }
