@@ -5,14 +5,15 @@
  * Un clase puede definirse sin necesidad del
  * constructor.
  * Se usa una constructor vacío de manera automática
+ * falta meterle mano un poco
 */
 
 class cuentaBancaria {
     public:
         cuentaBancaria(std::string cuenta, int saldo);  // constructor
         void agregar_dinero();
-        void retirar_dinero();
-        void mostrar_saldo();
+        void retirar_dinero(int retiro);
+        int mostrar_saldo();
     private:
         std::string num_cuenta;
         int saldo_actual;
@@ -24,23 +25,33 @@ cuentaBancaria::cuentaBancaria(std::string cuenta, int saldo) {
     saldo_actual = saldo;
 }
 
-void cuentaBancaria::agregar_dinero(){
+void cuentaBancaria::agregar_dinero() {
     int saldo_agregado;
     std::cout << "Agrega saldo..." << std::endl;
     std::cin >> saldo_agregado;
     std::cout << "Agregando:" << saldo_agregado << std::endl;
     saldo_actual += saldo_agregado; 
 }
+void cuentaBancaria::retirar_dinero(int retiro) {
+    saldo_actual -= retiro;
+}
 
-void cuentaBancaria::mostrar_saldo(){
-    std::cout << saldo_actual << std::endl;
+int cuentaBancaria::mostrar_saldo() {
+    return saldo_actual;
 }
 
 int main(int argc, char **argv)
 {
+    int retiro;
     cuentaBancaria cuenta("123", 1500);
     std::cout << "Cuenta bancaria..." << std::endl;
-    cuenta.mostrar_saldo();
+    std::cout << cuenta.mostrar_saldo() << std::endl;
     cuenta.agregar_dinero();
-    cuenta.mostrar_saldo();
+    std::cout << cuenta.mostrar_saldo() << std::endl;
+    std::cout << "retiro..." << std::endl;
+    std::cout << "cuanto deseas retirar?" << std::endl;
+    std::cin >> retiro;
+    cuenta.retirar_dinero(retiro);
+    std::cout << cuenta.mostrar_saldo() << std::endl;
+
 }
