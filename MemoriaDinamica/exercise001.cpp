@@ -9,6 +9,11 @@
  * 5. Libere correctamente la memoria,
 */
 
+// ✅ new int*[*arrows_ptr] crea un array de punteros.
+// ✅ mtrx[i] = new int[*columns_ptr] asigna memoria para cada fila.
+// ✅ return mtrx; devuelve la dirección base de la matriz.
+// ✅ Debemos liberar memoria con delete[] para evitar fugas.
+
 void show_arrows_columns(int *rows_ptr, int *columns_ptr) {
     std::cout << "rows: " << *rows_ptr << std::endl;
     std::cout << "columns: " << *columns_ptr << std::endl;
