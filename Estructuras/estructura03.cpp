@@ -1,7 +1,7 @@
-// Punteros a estructuras 3
+// Punteros a estructuras 03
 #include <iostream>
 
-struct PERSONA{
+struct PERSONA {
     char nombre[20];
     uint16_t edad;
 } *puntero_persona;
@@ -10,7 +10,8 @@ struct PERSONA{
 void pedirDatos();
 void mostrarDatos(struct PERSONA *puntero_persona);
 
-int main(){
+int main() 
+{
 
     PERSONA *puntero_persona = new PERSONA;
 

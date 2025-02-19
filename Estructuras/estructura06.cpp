@@ -11,7 +11,7 @@ struct Cat {
 
 void sumaEdad(Cat *&g);
 
-int main (int argc, char** argv)
+int main(int argc, char** argv)
 {
     Cat *gato       = new Cat;
     gato->nombre    = "juancho";
@@ -21,7 +21,7 @@ int main (int argc, char** argv)
     gato02->nombre  = "benito";
     gato02->edad    = 7;
 
-    /* Copiamos los datos de juancho hacia benito */
+    // Copiamos los datos de juancho hacia benito 
     gato02->nombre = gato->nombre;
     gato02->edad = gato->edad;
 
@@ -40,3 +40,28 @@ void sumaEdad(Cat *&g)
     g->edad = g->edad + a;
     std::cout << "Nueva edad de juancho: " << g->edad << std::endl;
 }
+
+
+/*
+🔹 Solución 2: Pasar un puntero doble a sumaEdad para modificar gato
+Si necesitas modificar el puntero dentro de sumaEdad(), pásalo como Cat**:
+
+void sumaEdad(Cat **g) {
+    (*g)->edad += 2;
+    std::cout << "Nueva edad de juancho: " << (*g)->edad << std::endl;
+}
+
+sumaEdad(&gato);
+🔹 Esto es útil si quisieras cambiar la dirección de gato dentro de la función.
+
+✔ Usa Cat *g si solo quieres modificar los atributos del objeto al que apunta el puntero.
+✔ Usa Cat *&g si quieres cambiar la dirección del puntero (es decir, hacer que apunte a otro objeto).
+
+Si solo estás cambiando propiedades del objeto, no necesitas &.
+Si necesitas modificar el puntero en sí, entonces sí necesitas &. 🚀
+
+Cuando pasamos un puntero como argumento a una función sin usar &, lo que se copia es el valor del puntero, es decir, la dirección de memoria que contiene. No se copia el objeto al que apunta el puntero.
+
+
+
+*/

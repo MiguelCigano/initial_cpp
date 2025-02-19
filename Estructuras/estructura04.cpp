@@ -1,4 +1,4 @@
-/* Puntero a estructura 03
+/* Puntero a estructura 04
 
 */
 
@@ -6,8 +6,8 @@
 
 using namespace std;
 
-// * Se crea la variable Led tipo STRUCT la cual contiene tres campos definidos en la estructura LED.
-// * Además, se crea un puntero el cual almacena la dirección de Led, es decir, a punta a la direccion de memoria de Led.
+// Se crea la variable Led tipo STRUCT la cual contiene tres campos definidos en la estructura LED.
+// Además, se crea un puntero el cual almacena la dirección de Led, es decir, a punta a la direccion de memoria de Led.
 
 
 struct LED{
