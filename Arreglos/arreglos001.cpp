@@ -13,6 +13,7 @@ double C[10];
 int main(){
     int vec[3] = {1, 2, 3};
     vector<int> v1 = {2, 3, 4};
+    
     std::cout << vec << std::endl;
     std::cout << &vec << std::endl;
     std::cout << &vec[0] << std::endl;
