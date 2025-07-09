@@ -17,7 +17,7 @@ struct Part {
 
 void set_name_part(Part *part) {
     if (!part) {
-        std::cerr << "ERROR: Puntero a part es nullptr!" << std::endl;
+        std::cerr << "ERROR: puntero a Part es un nullptr!" << std::endl;
         return;
     }
     std::cout << "Digite el nombre de la parte: " << std::endl;
@@ -27,10 +27,10 @@ void set_name_part(Part *part) {
 
 void reset_number_part(Part *part, const int number) {
     if (!part) {
-        std::cerr << "ERROR: Puntero a part es nullptr!" << std::endl;
+        std::cerr << "ERROR: puntero a Part es un nullptr!" << std::endl;
         return;
     }
-    (*part).number = number; 
+    (*part).number = number; // ->
 }
 
 int main(int argc, char **argv)
@@ -43,7 +43,7 @@ int main(int argc, char **argv)
     part_ptr = &wheel;
     const int var = 1;
 
-    (*part_ptr).number = 100;
+    (*part_ptr).number = 100;  // ->
     set_name_part(part_ptr);
     reset_number_part(part_ptr, var);
     std::cout << "Number: " << (*part_ptr).number << std::endl;

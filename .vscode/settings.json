@@ -52,6 +52,17 @@
         "typeinfo": "cpp",
         "complex": "cpp",
         "chrono": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "any": "cpp",
+        "strstream": "cpp",
+        "codecvt": "cpp",
+        "forward_list": "cpp",
+        "map": "cpp",
+        "optional": "cpp",
+        "fstream": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "cfenv": "cpp",
+        "valarray": "cpp"
     }
 }
