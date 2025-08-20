@@ -63,6 +63,16 @@
         "ranges": "cpp",
         "span": "cpp",
         "cfenv": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "csignal": "cpp",
+        "condition_variable": "cpp",
+        "list": "cpp",
+        "set": "cpp",
+        "unordered_set": "cpp",
+        "regex": "cpp",
+        "mutex": "cpp",
+        "semaphore": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp"
     }
 }

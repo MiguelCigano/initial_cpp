@@ -3,17 +3,16 @@
 
 using namespace std;
 
-/* se define el protipo */
-/* const nos indica que la función no modifica el contenido de vector */
+// Se define el protipo 
+// const nos indica que la función no modifica el contenido de vector
 void imprimeMatrizReferencia(const vector<vector<double>> &matrix);
-
 void imprimeMatrizValor(const vector<vector<double>> matrix);
 
 int main(void){
 
     vector<vector<double>> matrix;
 
-    /* inicializando el tamaño de una matriz 3x3 */
+    // inicializando el tamaño de una matriz 3x3
     matrix.resize(3, vector<double>(3));
 
     /* asignando valores a la matriz */
@@ -27,11 +26,11 @@ int main(void){
     matrix[2][1] = 8.0;
     matrix[2][2] = 9.0;
 
-    /* existen otras formas de inicializar una matriz */
+    // existen otras formas de inicializar una matriz
     vector<vector<double>> matrix2;
     matrix.resize(3, vector<double>(3));
 
-    /* inicializa una matriz con puros ceros */
+    // inicializa una matriz con puros ceros
     vector<vector<double>> matrix3(3, vector<double>(3, 0.0));
 
     vector<vector<double>> matrix4 = {
@@ -66,10 +65,10 @@ int main(void){
     return 0;
 }
 
-/* usa bucles basados en rangos 'range-based for loops' para iterar sobre las filas */ 
+/* Usa bucles basados en rangos 'range-based for loops' para iterar sobre las filas */ 
 /* y los elementos de cada fila */
-/* nota que esta función recibe el valor por referencia, lo cual es más eficiente porque no se */
-/* trabaja con una copia */
+/* Nota que esta función recibe el valor por referencia, lo cual es más eficiente porque no se */
+/* Trabaja con una copia */
 void imprimeMatrizReferencia(const vector<vector<double>> &matrix)
 {
     for(const auto &row: matrix)
