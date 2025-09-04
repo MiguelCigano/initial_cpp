@@ -2,42 +2,31 @@
 #include <cmath>
 
 using namespace std;
-const double pi_ = 3.1416;
+const double _pi = 3.1416;
 
-// Prototipos de funciones
+// Funciones
+void area_circulo(const int diametro_){
+    double area, radio = diametro_ / 2.0;
+    area = _pi * pow(radio, 2);
+    cout << "Area: " << area << endl;
+    return;
+}
 
-int area_circ(int d);
-int per_circ(int diametro_);
+void perimetro_circulo(const int d){
+    double p;
+    p = _pi * d;
+    cout << "Perimetro: " << p << endl;
+    return;
+}
 
 // Función principal
-
 int main(){
+    int diametro;
+    cout << "Ingresa el diametro del circulo:" << endl;
+    cin >> diametro;
+    cout << "El diametro es: " << diametro << endl;
+    area_circulo(diametro);
+    perimetro_circulo(diametro);
 
-    int diametro_;
-
-    cout << "Ingresa el diametro del circulo: \n";
-    cin >> diametro_;
-    cout << "El diametro es: \n" << diametro_ << endl;
-    area_circ(diametro_);
-    per_circ(diametro_);
-
-    return 0;
-
-}
-
-// Zona de funciones
-
-int area_circ(int diametro_){
-    int area_;
-    area_ = pi_*pow(diametro_/2, 2);
-    cout << area_ << endl;
-    return 0;
-}
-
-int per_circ(int d){
-    int p;
-    p = pi_*d;
-    cout<< p <<endl;
-    
     return 0;
 }

@@ -1,24 +1,20 @@
 #include <iostream>
-using namespace std;
 
-//prototype
-int factorial(int n);
+// prototype
+int factorial(const int n);
 
-//main function
 int main() {
-    int n;
-    cout << "Number: ";
-    cin >> n;
+    const int n = 5;
     int fact = factorial(n);
-    cout << "Factorial of " << n << " is " << fact << endl;
+    std::cout << "Factorial of " << n << " is " << fact << std::endl;
     return 0;
 }
 
-//function
-int factorial(int n) {
+int factorial(const int n) {
     int fact = 1;
-    for(int i=1; i<=n; i++) {
+    for(int i = 1; i <= n; i++) {
         fact = fact * i;
     }
+
     return fact;
 }
