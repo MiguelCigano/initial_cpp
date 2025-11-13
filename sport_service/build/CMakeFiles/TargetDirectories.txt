@@ -1,0 +1,3 @@
+/home/jmiguel-nitro/Documents/cpp/cpp/pruebas/sport_service/build/CMakeFiles/sports_service.dir
+/home/jmiguel-nitro/Documents/cpp/cpp/pruebas/sport_service/build/CMakeFiles/edit_cache.dir
+/home/jmiguel-nitro/Documents/cpp/cpp/pruebas/sport_service/build/CMakeFiles/rebuild_cache.dir

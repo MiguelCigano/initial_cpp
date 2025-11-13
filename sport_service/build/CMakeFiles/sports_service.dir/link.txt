@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/sports_service.dir/src/main.cpp.o -o sports_service  /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libcrypto.so 
