@@ -9,6 +9,9 @@
 #include <httplib.h>
 #include <nlohmann/json.hpp>
 
+// https://api-sports.io/documentation/football/v3#section/Logos-Images
+// https://www.api-football.com/
+
 // void send_update_to_widget(const std::string& json_path)
 // {
 //     bundle* b = bundle_create();
@@ -137,7 +140,7 @@ void periodic_worker(const std::string url, const std::string output_path, int i
                 ifs >> j;
                 std::cout << "[Save] " << output_path << " (" << j.dump(0).size() << " bytes)" << std::endl;
 
-                // Si la respuesta tiene "events" (TheSportsDB), mostramos resumen
+                // Si la respuesta tiene "events", mostramos resumen
                 if (j.contains("events")) {
                     auto events = j["events"];
                     std::cout << "Eventos encontrados: " << events.size() << "\n";
@@ -153,7 +156,7 @@ void periodic_worker(const std::string url, const std::string output_path, int i
 
                         std::cout << "  - " << home << " " << scoreHome
                         << " vs " << away << " " << scoreAway
-                        << " (" << date << " " << time << ")\n";
+                        << " (" << date << " " << time << ")" << std::endl;
                     }
                 } else {
                     std::cout << "Respuesta no contiene 'events'. Revisa el JSON guardado.\n";
