@@ -1,4 +1,3 @@
-#include "factorial01.hpp"
 #include <iostream>
 #include <algorithm>
 

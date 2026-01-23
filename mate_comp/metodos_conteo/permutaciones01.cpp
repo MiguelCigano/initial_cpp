@@ -16,9 +16,9 @@ int main() {
 
     int x = 1;
     do {
-        std::cout << "Value x = " << x << std::endl;
+        std::cout << "Value x2 = " << x << std::endl;
         x = x + 1;
-        // x++; Lo mismo que la linea anterior
+        // x++; // Lo mismo que la linea anterior
     } while (x <= 5);
 
     return 0;

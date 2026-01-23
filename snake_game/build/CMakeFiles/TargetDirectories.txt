@@ -1,0 +1,3 @@
+/home/jmiguel-nitro/Documents/cpp/cpp/cpp_lab/snake_game/build/CMakeFiles/snake_game.dir
+/home/jmiguel-nitro/Documents/cpp/cpp/cpp_lab/snake_game/build/CMakeFiles/edit_cache.dir
+/home/jmiguel-nitro/Documents/cpp/cpp/cpp_lab/snake_game/build/CMakeFiles/rebuild_cache.dir
