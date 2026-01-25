@@ -2,41 +2,36 @@
 #include <algorithm>
 #include <vector>
 
-/* Revisar este código, se ve interesante, es sobre cosas que comprar con presupuestos*/
-
-using namespace std;
+// Check this code, looks like interesting
 
 int N, B, A[100000];
 
-void solve() {
-	cin >> N >> B;
-	for(int i=0; i<=N; ++i){
-		cin >> A[i];
+void fn_solve() {
+	std::cin >> N >> B;
+	for (int i = 0; i <= N; ++i) {
+		std::cin >> A[i];
 	}
-	sort(A, A+N);
+	std::sort(A, A+N);
 	int ans = 0;
 
-	for(int i=0; i<=N; ++i){
-		if(B>=A[i]){
-		B-=A[i];
-		++ans;
+	for (int i = 0; i <= N; ++i) {
+		if (B >= A[i]) {
+			B -= A[i];
+			++ans;
 		}
 	}
-	cout<<ans<< "\n";
+	std::cout << ans << std::endl;
 }	
 
-
-
 int main(){
-
-	ios::sync_with_stdio(0);
-	cin.tie(0);
+	std::ios::sync_with_stdio(false);
+	std::cin.tie(nullptr);
 	
 	int t, i=1;
-	cin >> t;
+	std::cin >> t;
 	while(t--){
-		cout<<"Case #"<<i<< ": ";
-		solve();
+		std::cout<<"Case # "<< i << ": " << std::endl;
+		fn_solve();
 		++i;
 	}	
 }

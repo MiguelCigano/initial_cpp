@@ -7,31 +7,8 @@ using namespace std;
 
 #define MAXLINES 25
 
-/* prototipo de funciones */
-int getLines(char *lines[]);
-void sort(char *p[], int n);
-void printStr(char *p[], int n);
-
 /* arreglo de punteros que apunta tipo char */
 char *lines[MAXLINES];
-
-int main(void)
-{
-    int numberLines;
-
-    /* lee las líneas desde el teclado */
-    numberLines = getLines(lines);
-    
-    if(numberLines < 0)
-    {
-        puts("Memory allocation error");
-        exit(-1);
-    }
-
-    sort(lines, numberLines);
-    printStr(lines, numberLines);
-
-}
 
 int getLines(char *lines[])
 {
@@ -74,5 +51,23 @@ void printStr(char *p[], int n)
     {
         printf("Mensaje: %s\n", p[i]);
     }
+}
+
+int main(void)
+{
+    int numberLines;
+
+    /* lee las líneas desde el teclado */
+    numberLines = getLines(lines);
+    
+    if(numberLines < 0)
+    {
+        puts("Memory allocation error");
+        exit(-1);
+    }
+
+    sort(lines, numberLines);
+    printStr(lines, numberLines);
+
 }
 
