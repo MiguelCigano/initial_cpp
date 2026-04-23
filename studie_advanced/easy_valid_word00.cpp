@@ -30,7 +30,7 @@ class Solution {
             }
             for (const auto& letter : word) {
                 if (!std::isalnum(static_cast<unsigned char>(letter))) {
-                    std::cout << "No cumple" << std::endl;
+                    std::cout << "No yet!" << std::endl;
                     return false;
                 }
             }
