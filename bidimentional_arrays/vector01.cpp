@@ -3,19 +3,14 @@
 
 using namespace std;
 
-// Se define el protipo 
-// const nos indica que la función no modifica el contenido de vector
 void imprimeMatrizReferencia(const vector<vector<double>> &matrix);
 void imprimeMatrizValor(const vector<vector<double>> matrix);
 
 int main(void){
 
     vector<vector<double>> matrix;
-
-    // inicializando el tamaño de una matriz 3x3
     matrix.resize(3, vector<double>(3));
 
-    /* asignando valores a la matriz */
     matrix[0][0] = 10.0;
     matrix[0][1] = 22.0;
     matrix[0][2] = 3.0;
@@ -34,16 +29,13 @@ int main(void){
     vector<vector<double>> matrix3(3, vector<double>(3, 0.0));
 
     vector<vector<double>> matrix4 = {
-    {10.0, 20.0, 30.0},
-    {40.0, 50.0, 60.0},
-    {7.0, 80.0, 90.0}
+                                        {10.0, 20.0, 30.0},
+                                        {40.0, 50.0, 60.0},
+                                        {7.0, 80.0, 90.0}
     };
 
-    /* para imprimir la matriz */
-
-    for(size_t i = 0; i < matrix3.size(); i++)
-    {
-        for(size_t j = 0; j < matrix3.size(); j++)
+    for (size_t i = 0; i < matrix3.size(); i++) {
+        for (size_t j = 0; j < matrix3.size(); j++)
             std::cout << matrix3[i][j] << " ";
         std::cout << std::endl;
     }
@@ -51,13 +43,11 @@ int main(void){
     std::cout << std::endl;
     std::cout << "--------------" << std::endl;
     std::cout << std::endl;
-
     imprimeMatrizReferencia(matrix4);
 
     std::cout << std::endl;
     std::cout << "--------------" << std::endl;
     std::cout << std::endl;
-    
     imprimeMatrizValor(matrix);
 
     std::cout << std::endl;
@@ -71,10 +61,8 @@ int main(void){
 /* Trabaja con una copia */
 void imprimeMatrizReferencia(const vector<vector<double>> &matrix)
 {
-    for(const auto &row: matrix)
-    {
-        for(double value : row)
-        {
+    for (const auto &row: matrix) {
+        for (double value : row) {
             std::cout << value << " ";
         }
         std::cout << std::endl;
@@ -84,10 +72,8 @@ void imprimeMatrizReferencia(const vector<vector<double>> &matrix)
 
 void imprimeMatrizValor(const vector<vector<double>> matrix)
 {
-    for(const auto &row: matrix)
-    {
-        for(double value : row)
-        {
+    for (const auto &row: matrix) {
+        for (double value : row) {
             std::cout << value << " ";
         }
         std::cout << std::endl;
