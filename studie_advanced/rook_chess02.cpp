@@ -10,13 +10,13 @@
 bool checking_vectors(const std::vector<int>& rv, const std::vector<int>& cv) {
     // O(N + M)
     for (size_t i = 0; i < rv.size(); ++i) {
-        if (rv[i] > 1) {
+        if (rv[i] != 1) {
             return false;
         }
     }
 
     for (size_t j = 0; j < cv.size(); ++j) {
-        if (cv[j] > 1) {
+        if (cv[j] != 1) {
             return false;
         }
     }
